@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+#chatgpt-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(0, 0, 0); /* Semi-transparent white background */
+      z-index: 1000; /* Ensure it is above all other content */
+      user-select: none;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none;    /* Firefox */
+      -ms-user-select: none;     /* IE */
+    }
+
+
+    #chatgpt-popup-content {
+    background-color: #00000011;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;
+
+    /* Center content */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+
+    /* Optional: If you want a background gradient and glow animation */
+    /* background: linear-gradient(180deg, rgba(51, 51, 51, 0.749) 0%, rgba(0, 0, 0, 0.325) 100%);
+    background-size: 100% 200%;
+    animation: glowWave 2s infinite; */
+}
+
+
+#chatgpt-popup-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.form-container {
+    background: #000;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* .glowing-text {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+} */
+.form-icon {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 64px; /* Adjust the size as needed */
+    height: 64px; /* Adjust the size as needed */
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8)); /* More spreading white glow */
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="message"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0 10px 0;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="message"]:focus {
+    outline: none;
+    background: #000;
+    border-bottom: 2px solid #007BFF;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+       
+    </style>
+</head>
+<body>
+    <div id="chatgpt-popup">
+        <div id="chatgpt-popup-content">
+           <div class="form-container">
+                <img src="https://cdn-icons-png.flaticon.com/128/4151/4151577.png" alt="Contact Us Icon" class="form-icon">
+                <!-- <div class="glowing-text">UNKOWN BRAIN</div> -->
+                <form action="https://api.web3forms.com/submit" method="post">
+                    <input type="hidden" name="access_key" value="12f225b1-bd78-4bfc-95b6-575da172e27c">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="message" placeholder="Message" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+    
+    </div>
+    </div>
+</body>
+</html>
